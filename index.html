@@ -2,14 +2,16 @@
 <html lang="en" dir="ltr">
 <head>
 <meta charset="utf-8">
+<script>try{var savedTheme=localStorage.getItem('iaya-theme');document.documentElement.dataset.theme=savedTheme==='dark'?'dark':'light'}catch(e){document.documentElement.dataset.theme='light'}</script>
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Iraqi Academic Youth Association UK | الجمعية العراقية الأكاديمية للشباب</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,600;1,400&family=Reem+Kufi:wght@500;700&family=Cairo:wght@400;600&family=Figtree:wght@400;600&display=swap">
 <style>
-:root{--bg:#081329;--bg2:#0f2350;--lapis:#16409a;--teal:#2bb3a3;--gold:#eec76b;--ink:#f4efe2;--mute:#aeb8cf;--line:rgba(238,199,107,.35);--st:.09;
+:root{color-scheme:light;--bg:#fffaf0;--bg2:#f2eadc;--lapis:#16409a;--teal:#0f7f73;--gold:#795600;--ink:#102344;--mute:#4b5970;--line:rgba(121,86,0,.3);--st:.14;
 box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
-@media (prefers-color-scheme:light){:root:not([data-theme="dark"]){--bg:#f7f2e4;--bg2:#e9e0c6;--lapis:#16409a;--teal:#0f7f73;--gold:#7a5600;--ink:#0d1a38;--mute:#4a546b;--line:rgba(122,86,0,.4);--st:.14}}
-:root[data-theme="dark"]{--bg:#081329}
+:root[data-theme="dark"]{color-scheme:dark;--bg:#07162e;--bg2:#102b52;--lapis:#16409a;--teal:#2bb3a3;--gold:#eec76b;--ink:#fffaf0;--mute:#b4c3dc;--line:rgba(238,199,107,.35);--st:.09}
+#theme{flex-shrink:0;white-space:nowrap;font-size:14px}
+.event .m,.event td:first-child{color:#f5d589}
 *,*:before,*:after{box-sizing:inherit}
 html{scroll-behavior:smooth;scroll-padding-top:64px}
 body{margin:0;color:var(--ink);font:17px/1.65 Figtree,Cairo,sans-serif;background:var(--bg) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='64' height='64'%3E%3Cg fill='none' stroke='%23c9a24a' stroke-opacity='.1'%3E%3Crect x='16' y='16' width='32' height='32'/%3E%3Crect x='16' y='16' width='32' height='32' transform='rotate(45 32 32)'/%3E%3C/g%3E%3C/svg%3E")}
@@ -137,6 +139,7 @@ html[lang=ar] .sub h1{font-family:"Reem Kufi",Cairo}
 <a href="#/hub"><span class="en">Resources</span><span class="ar">موارد</span></a>
 <a href="#contact"><span class="en">Contact</span><span class="ar">تواصل</span></a>
 <a class="pill" href="#contact"><span class="en">Join us</span><span class="ar">انضم إلينا</span></a>
+<button id="theme" type="button" aria-label="Dark mode" aria-pressed="false"><span class="en">Dark mode</span><span class="ar">الوضع الداكن</span></button>
 <button id="lang" aria-label="Switch language"><span class="en">العربية</span><span class="ar">English</span></button>
 </div></nav>
 
@@ -303,8 +306,11 @@ html[lang=ar] .sub h1{font-family:"Reem Kufi",Cairo}
 
 <script>
 (function(){
-var h=document.documentElement,b=document.getElementById('lang');
-function set(l){h.lang=l;document.body.dir=l==='ar'?'rtl':'ltr'}
+var h=document.documentElement,b=document.getElementById('lang'),themeButton=document.getElementById('theme');
+function updateThemeButton(){var dark=h.dataset.theme==='dark';themeButton.setAttribute('aria-pressed',String(dark));themeButton.setAttribute('aria-label',h.lang==='ar'?(dark?'التبديل إلى الوضع الفاتح':'التبديل إلى الوضع الداكن'):(dark?'Switch to light mode':'Switch to dark mode'));themeButton.querySelector('.en').textContent=dark?'Light mode':'Dark mode';themeButton.querySelector('.ar').textContent=dark?'الوضع الفاتح':'الوضع الداكن'}
+themeButton.onclick=function(){h.dataset.theme=h.dataset.theme==='dark'?'light':'dark';try{localStorage.setItem('iaya-theme',h.dataset.theme)}catch(e){}updateThemeButton()};
+updateThemeButton();
+function set(l){h.lang=l;document.body.dir=l==='ar'?'rtl':'ltr';updateThemeButton()}
 try{var s=localStorage.getItem('iaya-lang');if(s)set(s)}catch(e){}
 b.onclick=function(){var l=h.lang==='en'?'ar':'en';set(l);try{localStorage.setItem('iaya-lang',l)}catch(e){}};
 })();
