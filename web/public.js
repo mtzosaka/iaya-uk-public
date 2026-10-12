@@ -1,0 +1,26 @@
+(function(){
+ 'use strict';
+ var root=document.documentElement,header=document.querySelector('.site-header'),menu=document.getElementById('menu'),theme=document.getElementById('theme'),language=document.getElementById('lang');
+ var currentRoute='home';
+ var pageNames={home:['Home','الرئيسية'],about:['Association','الجمعية'],activities:['Our work','أعمالنا'],events:['Events','الفعاليات'],resources:['Resources','الموارد'],contact:['Contact','تواصل'],privacy:['Privacy','الخصوصية'],community:['Community','المجتمع'],join:['Join IAYA','العضوية'],signin:['Sign in','الدخول'],admin:['Committee','اللجنة'],'not-found':['Page not found','الصفحة غير موجودة']};
+ function labels(){var dark=root.dataset.theme==='dark';theme.querySelector('.en').textContent=dark?'Light':'Dark';theme.querySelector('.ar').textContent=dark?'فاتح':'داكن';theme.setAttribute('aria-pressed',String(dark));theme.setAttribute('aria-label',root.lang==='ar'?(dark?'التبديل إلى المظهر الفاتح':'التبديل إلى المظهر الداكن'):(dark?'Switch to light mode':'Switch to dark mode'));language.setAttribute('aria-label',root.lang==='ar'?'Switch to English':'التبديل إلى العربية');menu.setAttribute('aria-label',root.lang==='ar'?'قائمة التنقل':'Navigation menu');document.querySelectorAll('[data-label-en]').forEach(function(e){e.setAttribute('aria-label',root.lang==='ar'?e.dataset.labelAr:e.dataset.labelEn)});document.querySelectorAll('[data-alt-en]').forEach(function(e){e.alt=root.lang==='ar'?e.dataset.altAr:e.dataset.altEn});var logo=document.querySelector('.brand img');if(logo)logo.alt=root.lang==='ar'?'شعار الجمعية العراقية الأكاديمية للشباب':'IAYA UK logo';document.getElementById('theme-color').content=dark?'#081b30':'#faf7ef'}
+ function closeMenu(){header.dataset.open='false';menu.setAttribute('aria-expanded','false')}
+ theme.addEventListener('click',function(){root.dataset.theme=root.dataset.theme==='dark'?'light':'dark';try{localStorage.setItem('iaya-theme',root.dataset.theme)}catch(e){}labels()});
+ language.addEventListener('click',function(){root.lang=root.lang==='en'?'ar':'en';root.dir=root.lang==='ar'?'rtl':'ltr';try{localStorage.setItem('iaya-lang',root.lang)}catch(e){}labels();updateTitle();if(window.IAYACommunity&&['community','join','signin','admin'].indexOf(currentRoute)>=0)window.IAYACommunity.onLanguageChange()});
+ menu.addEventListener('click',function(){var open=header.dataset.open!=='true';header.dataset.open=String(open);menu.setAttribute('aria-expanded',String(open))});
+ document.addEventListener('click',function(e){if(e.target.closest('#main-nav a')||!header.contains(e.target))closeMenu()});
+ document.addEventListener('keydown',function(e){if(e.key==='Escape'&&header.dataset.open==='true'){closeMenu();menu.focus()}});
+ function updateTitle(){var name=pageNames[currentRoute]||pageNames['not-found'];document.title=(root.lang==='ar'?name[1]:name[0])+' | IAYA UK'}
+ function route(event){
+  var hash=location.hash.slice(1);if(hash==='main')return;
+  var parts=hash.replace(/^\//,'').split('/'),name=parts[0]||'home';
+  var alias={team:'about',hub:'resources',login:'signin'};name=alias[name]||name;
+  currentRoute=pageNames[name]?name:'not-found';var account=['community','join','signin','admin'].indexOf(currentRoute)>=0;
+  document.querySelectorAll('[data-page]').forEach(function(p){p.hidden=p.dataset.page!==(account?'community':currentRoute)});
+  document.querySelectorAll('[data-nav]').forEach(function(a){if(a.dataset.nav===(account?'community':currentRoute))a.setAttribute('aria-current','page');else a.removeAttribute('aria-current')});
+  closeMenu();updateTitle();
+  if(window.IAYACommunity){if(account)window.IAYACommunity.render(currentRoute);else if(window.IAYACommunity.leave)window.IAYACommunity.leave()}
+  requestAnimationFrame(function(){if(event&&event.type==='hashchange')document.getElementById('main').focus({preventScroll:true});if(currentRoute==='about'&&parts[1]==='team')document.getElementById('committee').scrollIntoView({block:'start'});else scrollTo({top:0,behavior:'instant'})});
+ }
+ window.addEventListener('hashchange',route);labels();route();
+})();
