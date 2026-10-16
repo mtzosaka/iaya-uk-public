@@ -9,3 +9,5 @@ dist/
 # Impeccable: machine-local hooks and platform-specific engine binary
 .claude/settings.local.json
 .claude/skills/impeccable/scripts/bin/
+.impeccable/hook.cache.json
+.impeccable/config.local.json

@@ -7,8 +7,10 @@
  function closeMenu(){header.dataset.open='false';menu.setAttribute('aria-expanded','false')}
  theme.addEventListener('click',function(){root.dataset.theme=root.dataset.theme==='dark'?'light':'dark';try{localStorage.setItem('iaya-theme',root.dataset.theme)}catch(e){}labels()});
  language.addEventListener('click',function(){root.lang=root.lang==='en'?'ar':'en';root.dir=root.lang==='ar'?'rtl':'ltr';try{localStorage.setItem('iaya-lang',root.lang)}catch(e){}labels();updateTitle();if(window.IAYACommunity&&['community','join','signin','admin'].indexOf(currentRoute)>=0)window.IAYACommunity.onLanguageChange()});
- menu.addEventListener('click',function(){var open=header.dataset.open!=='true';header.dataset.open=String(open);menu.setAttribute('aria-expanded',String(open))});
+ menu.addEventListener('click',function(){var open=header.dataset.open!=='true';header.dataset.open=String(open);menu.setAttribute('aria-expanded',String(open));if(open){var first=document.querySelector('#main-nav a');if(first)first.focus()}});
  document.addEventListener('click',function(e){if(e.target.closest('#main-nav a')||!header.contains(e.target))closeMenu()});
+ // The nav precedes the toggle in source order, so keep keyboard focus inside the open menu and close it once focus leaves the header.
+ header.addEventListener('focusout',function(e){if(header.dataset.open==='true'&&e.relatedTarget&&!header.contains(e.relatedTarget))closeMenu()});
  document.addEventListener('keydown',function(e){if(e.key==='Escape'&&header.dataset.open==='true'){closeMenu();menu.focus()}});
  function updateTitle(){var name=pageNames[currentRoute]||pageNames['not-found'];document.title=(root.lang==='ar'?name[1]:name[0])+' | IAYA UK'}
  function route(event){
