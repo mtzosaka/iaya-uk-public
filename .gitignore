@@ -5,3 +5,7 @@ dist/
 .env
 .env.*
 !.env.example
+
+# Impeccable: machine-local hooks and platform-specific engine binary
+.claude/settings.local.json
+.claude/skills/impeccable/scripts/bin/
