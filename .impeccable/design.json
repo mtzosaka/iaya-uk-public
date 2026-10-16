@@ -1,0 +1,385 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-16T18:10:03.944Z",
+  "title": "Design System: IAYA UK",
+  "extensions": {
+    "colorMeta": {
+      "cream-ground": {
+        "role": "neutral",
+        "displayName": "Cream Ground",
+        "canonical": "#f7f2e4",
+        "tonalRamp": [
+          "#3b3011",
+          "#66531e",
+          "#92772b",
+          "#bd9a38",
+          "#d0b362",
+          "#deca91",
+          "#ece1c0",
+          "#f9f6eb"
+        ]
+      },
+      "sand-panel": {
+        "role": "neutral",
+        "displayName": "Sand Panel",
+        "canonical": "#ece3c9",
+        "tonalRamp": [
+          "#392f14",
+          "#625223",
+          "#8c7431",
+          "#b59740",
+          "#cab168",
+          "#dac895",
+          "#eae0c3",
+          "#f8f5ec"
+        ]
+      },
+      "ivory-surface": {
+        "role": "neutral",
+        "displayName": "Ivory Surface",
+        "canonical": "#fffcf3",
+        "tonalRamp": [
+          "#4d3900",
+          "#856300",
+          "#bd8e00",
+          "#f5b800",
+          "#ffcc33",
+          "#ffdb70",
+          "#ffebad",
+          "#fff9e5"
+        ]
+      },
+      "midnight-ink": {
+        "role": "neutral",
+        "displayName": "Midnight Ink",
+        "canonical": "#0d1a38",
+        "tonalRamp": [
+          "#0e1d3e",
+          "#19326c",
+          "#244799",
+          "#2e5cc7",
+          "#5980d9",
+          "#8ba6e4",
+          "#bdccf0",
+          "#eaeffa"
+        ]
+      },
+      "slate-muted": {
+        "role": "neutral",
+        "displayName": "Slate Muted",
+        "canonical": "#4a546b",
+        "tonalRamp": [
+          "#1f242d",
+          "#363e4e",
+          "#4d5870",
+          "#647291",
+          "#8692ac",
+          "#abb2c5",
+          "#cfd3de",
+          "#f0f1f5"
+        ]
+      },
+      "burnished-gold": {
+        "role": "primary",
+        "displayName": "Burnished Gold",
+        "canonical": "#7a5600",
+        "tonalRamp": [
+          "#4d3600",
+          "#855d00",
+          "#bd8500",
+          "#f5ad00",
+          "#ffc333",
+          "#ffd570",
+          "#ffe7ad",
+          "#fff7e5"
+        ]
+      },
+      "euphrates-teal": {
+        "role": "tertiary",
+        "displayName": "Euphrates Teal",
+        "canonical": "#0f7f73",
+        "tonalRamp": [
+          "#08443e",
+          "#0e776b",
+          "#14a999",
+          "#1adbc6",
+          "#49e9d8",
+          "#7ff0e4",
+          "#b6f6ef",
+          "#e8fcfa"
+        ]
+      },
+      "lapis": {
+        "role": "secondary",
+        "displayName": "Lapis",
+        "canonical": "#16409a",
+        "tonalRamp": [
+          "#0a1c43",
+          "#113074",
+          "#1845a5",
+          "#1f59d6",
+          "#4d7de5",
+          "#82a4ed",
+          "#b8cbf5",
+          "#e9effc"
+        ]
+      },
+      "night-ground": {
+        "role": "neutral",
+        "displayName": "Night Ground",
+        "canonical": "#081329",
+        "tonalRamp": [
+          "#0c1e40",
+          "#16336f",
+          "#1f499e",
+          "#285fcd",
+          "#5482de",
+          "#88a8e8",
+          "#bbcdf2",
+          "#eaeffb"
+        ]
+      },
+      "night-panel": {
+        "role": "neutral",
+        "displayName": "Night Panel",
+        "canonical": "#0f2350",
+        "tonalRamp": [
+          "#0c1c40",
+          "#153170",
+          "#1e469f",
+          "#275ace",
+          "#537edf",
+          "#87a5e8",
+          "#bacbf2",
+          "#eaeffb"
+        ]
+      },
+      "parchment-ink": {
+        "role": "neutral",
+        "displayName": "Parchment Ink",
+        "canonical": "#f4efe2",
+        "tonalRamp": [
+          "#372e15",
+          "#605024",
+          "#897134",
+          "#b19343",
+          "#c7ad6b",
+          "#d8c697",
+          "#e9dec4",
+          "#f8f5ed"
+        ]
+      },
+      "mist-muted": {
+        "role": "neutral",
+        "displayName": "Mist Muted",
+        "canonical": "#aeb8cf",
+        "tonalRamp": [
+          "#1c2230",
+          "#313c53",
+          "#465576",
+          "#5b6e9a",
+          "#7f8fb3",
+          "#a5b0ca",
+          "#ccd2e1",
+          "#eff1f6"
+        ]
+      },
+      "lamp-gold": {
+        "role": "primary",
+        "displayName": "Lamp Gold",
+        "canonical": "#eec76b",
+        "tonalRamp": [
+          "#453308",
+          "#77580e",
+          "#a97d13",
+          "#dca219",
+          "#eaba48",
+          "#f0cf7f",
+          "#f7e3b6",
+          "#fcf6e8"
+        ]
+      },
+      "night-teal": {
+        "role": "tertiary",
+        "displayName": "Night Teal",
+        "canonical": "#2bb3a3",
+        "tonalRamp": [
+          "#0f3e38",
+          "#1a6b61",
+          "#25988b",
+          "#2fc5b4",
+          "#5bd7c9",
+          "#8ce3d9",
+          "#bdefe9",
+          "#eafaf8"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display",
+        "purpose": "The association name in the hero (English)."
+      },
+      "display-arabic": {
+        "displayName": "Display (Arabic)",
+        "purpose": "Arabic hero and section headings in Kufic style, gold."
+      },
+      "headline": {
+        "displayName": "Headline",
+        "purpose": "Section headings, always gold."
+      },
+      "title": {
+        "displayName": "Title",
+        "purpose": "Arch panels, event title, news headlines, timeline names."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Paragraphs, 56–65ch measure."
+      },
+      "body-arabic": {
+        "displayName": "Body (Arabic)",
+        "purpose": "Arabic paragraphs at line-height 1.9."
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "Uppercase brand line in the header only."
+      }
+    },
+    "shadows": [],
+    "motion": [
+      {
+        "name": "ease-heritage",
+        "value": "cubic-bezier(.23,1,.32,1)",
+        "purpose": "All interaction transitions (≤220ms) and the bridge draw."
+      },
+      {
+        "name": "bridge-draw",
+        "value": "stroke-dashoffset 1200 → 0, 2.4s, 0.25s delay",
+        "purpose": "The single authored motion: the London–Baghdad arc draws once on load; static under reduced motion."
+      },
+      {
+        "name": "press",
+        "value": "scale(.97)",
+        "purpose": "Press feedback on buttons and header controls."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "compact",
+        "value": "380px"
+      },
+      {
+        "name": "phone",
+        "value": "479px"
+      },
+      {
+        "name": "mobile",
+        "value": "767px"
+      },
+      {
+        "name": "menu",
+        "value": "1023px"
+      },
+      {
+        "name": "tablet",
+        "value": "1100px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Main call to action, such as Apply for membership.",
+      "html": "<a class=\"ds-btn-primary\" href=\"#\">Apply for membership</a>",
+      "css": ".ds-btn-primary{display:inline-flex;align-items:center;min-height:50px;padding:11px 26px;border-radius:99px;background:var(--primary,#7a5600);color:var(--on-primary,#f7f2e4);border:1px solid var(--primary,#7a5600);font:600 15px Figtree,sans-serif;text-decoration:none;transition:opacity 160ms ease,transform 160ms cubic-bezier(.23,1,.32,1)}.ds-btn-primary:hover{opacity:.9}.ds-btn-primary:active{transform:scale(.97)}.ds-btn-primary:focus-visible{outline:3px solid var(--gold,#7a5600);outline-offset:4px}"
+    },
+    {
+      "name": "Secondary Button",
+      "kind": "button",
+      "refersTo": "button-secondary",
+      "description": "Secondary action next to a primary button.",
+      "html": "<a class=\"ds-btn-secondary\" href=\"#\">About the Association</a>",
+      "css": ".ds-btn-secondary{display:inline-flex;align-items:center;min-height:50px;padding:11px 26px;border-radius:99px;background:transparent;color:var(--gold,#7a5600);border:1px solid var(--gold,#7a5600);font:600 15px Figtree,sans-serif;text-decoration:none;transition:background 160ms ease}.ds-btn-secondary:hover{background:var(--bg2,#ece3c9)}.ds-btn-secondary:focus-visible{outline:3px solid var(--gold,#7a5600);outline-offset:4px}"
+    },
+    {
+      "name": "Header Control",
+      "kind": "button",
+      "description": "Theme, language and menu toggles.",
+      "html": "<button class=\"ds-pill\">العربية</button>",
+      "css": ".ds-pill{min-height:44px;min-width:44px;padding:8px 16px;border-radius:99px;border:1px solid var(--gold,#7a5600);background:transparent;color:var(--gold,#7a5600);font:13px Figtree,Cairo,sans-serif;cursor:pointer}.ds-pill:hover{background:var(--gold,#7a5600);color:var(--on-primary,#f7f2e4)}"
+    },
+    {
+      "name": "Mission Arch",
+      "kind": "custom",
+      "refersTo": "mission-panel",
+      "description": "The mission statement on a lapis arch with an inner gold outline.",
+      "html": "<p class=\"ds-mission\">Bridging Iraqi youth in the United Kingdom with Iraq through knowledge, leadership and academic service.</p>",
+      "css": ".ds-mission{margin:0;max-width:460px;background:#16409a;color:#fff;border-radius:220px 220px 16px 16px;padding:104px 44px 48px;text-align:center;font:500 24px/1.45 Fraunces,serif;outline:1px solid rgba(238,199,107,.55);outline-offset:-12px}"
+    },
+    {
+      "name": "Arch Panel",
+      "kind": "card",
+      "refersTo": "arch-panel",
+      "description": "One area of work under an arched top.",
+      "html": "<div class=\"ds-arch\"><h3>Academic exchange</h3><p>Conferences, lectures and seminars that advance knowledge and connect generations of scholars.</p></div>",
+      "css": ".ds-arch{max-width:260px;border:1px solid rgba(122,86,0,.3);border-radius:999px 999px 14px 14px;padding:84px 26px 30px;background:linear-gradient(#ece3c9,transparent 88%);text-align:center}.ds-arch h3{margin:0 0 12px;font:600 22px/1.3 Fraunces,serif;color:#7a5600}.ds-arch p{margin:0;font:15.5px/1.7 Figtree,sans-serif;color:#4a546b}"
+    },
+    {
+      "name": "Arch Portrait",
+      "kind": "custom",
+      "description": "Committee portrait in a gold-rimmed arch frame.",
+      "html": "<figure class=\"ds-person\"><div class=\"ds-frame\">AM</div><figcaption>Aalaa Al-Memar</figcaption></figure>",
+      "css": ".ds-person{margin:0;width:150px}.ds-frame{aspect-ratio:4/5;display:grid;place-items:center;border-radius:999px 999px 12px 12px;border:2px solid #7a5600;background:#ece3c9;font:600 40px Fraunces,serif;color:#7a5600;transition:border-color 160ms ease}.ds-person:hover .ds-frame{border-color:#0f7f73}.ds-person figcaption{margin-top:12px;text-align:center;font:600 14px Figtree,sans-serif}"
+    },
+    {
+      "name": "Text Field",
+      "kind": "input",
+      "description": "Membership form field.",
+      "html": "<label class=\"ds-field\">University<input placeholder=\"e.g. University of Cambridge\"></label>",
+      "css": ".ds-field{display:flex;flex-direction:column;gap:7px;font:14px Figtree,sans-serif}.ds-field input{padding:12px 14px;border:1px solid #7d7a6c;border-radius:8px;background:#f7f2e4;color:#0d1a38;font:16px Figtree,sans-serif;caret-color:#7a5600}.ds-field input:focus-visible{outline:3px solid #7a5600;outline-offset:4px}"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Bridge of Knowledge",
+    "overview": "The site presents the Iraqi Academic Youth Association UK as a formal academic institution with a Mesopotamian inheritance. Its world comes from the architecture and crafts of Baghdad: arches and iwans, lapis lazuli and gold, the eight-point star of geometric tilework. These are set inside a calm, editorial reading structure. The signature image is a bridge drawn from London to Baghdad, captioned with the association's line \"Knowledge brings us together\".\n\nThe voice is formal and elegant in both languages. English display type is a confident serif; Arabic display type is Kufic in character, so the Arabic page is a first-class reading experience with its own typographic identity, not a mirrored translation.\n\nLight and dark both belong to the system and follow the visitor's device until the visitor chooses: cream and burnished gold by day, navy and lamp gold by night. The previous editorial-only implementation remains on branch `backup/pre-rebuild-2026-10-12`; this system restores the heritage world from commit `8cc27eb` on the rebuilt structure, at the owner's request.",
+    "keyCharacteristics": [
+      "Faint eight-point star tile under every page.",
+      "Arch silhouettes for the mission statement, the areas of work and the committee portraits.",
+      "Lapis fields carry the mission and the event; gold carries headings, rims and the bridge.",
+      "Formal, institutional copy in English and Arabic.",
+      "One authored motion: the bridge arc draws itself once on load."
+    ],
+    "rules": [
+      {
+        "name": "The Lapis Field Rule",
+        "body": "Lapis is a field, never an accent: it fills whole panels (mission, event, \"All events\" link) and nothing smaller.",
+        "section": "colors"
+      },
+      {
+        "name": "The Gold on Lapis Rule",
+        "body": "Inside a lapis field, gold is always Lamp Gold (#eec76b). Burnished Gold on lapis fails contrast.",
+        "section": "colors"
+      },
+      {
+        "name": "The Kufic Voice Rule",
+        "body": "Arabic headings use Reem Kufi; Arabic body text uses Cairo. Don't set Arabic headings in the English serif.",
+        "section": "typography"
+      }
+    ],
+    "dos": [
+      "Do keep every heading gold and every Arabic heading in Reem Kufi.",
+      "Do use Lamp Gold (#eec76b) for anything gold inside lapis.",
+      "Do follow the device's light or dark setting until the visitor chooses a theme.",
+      "Do keep copy formal in both languages: full institutional names, no slang, headings without full stops.",
+      "Do keep real, supplied names, dates and photographs only (see PRODUCT.md)."
+    ],
+    "donts": [
+      "Don't add drop shadows, glassmorphism or gradient text.",
+      "Don't use teal for body text or small text.",
+      "Don't animate anything beyond the bridge draw and short interaction feedback.",
+      "Don't add statistics blocks or invented metrics."
+    ]
+  }
+}

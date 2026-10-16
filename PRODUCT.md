@@ -21,10 +21,10 @@ web
 
 The site presents the association and its work across four pillars, and runs community membership:
 
-1. **Academic exchange**: conferences, lectures and meetings that share knowledge and connect generations.
-2. **Youth development**: training, mentoring and support that help students and young researchers succeed.
-3. **Networks and opportunity**: links with universities, associations and employers across the UK, Iraq and beyond.
-4. **A bridge with Iraq**: transferring knowledge and expertise to support Iraq's development, reconstruction and revival.
+1. **Academic exchange**: conferences, lectures and seminars that advance knowledge and connect generations of scholars.
+2. **Youth development**: training, mentoring and guidance that help students and early-career researchers to excel.
+3. **Networks and opportunity**: partnerships with universities, professional associations and employers in the United Kingdom, Iraq and beyond.
+4. **A bridge with Iraq**: the transfer of knowledge and expertise in support of Iraq's development, reconstruction and renewal.
 
 Public visitors can learn about the association, its activities, the committee, the documented June 2026 event, verified news, resources and contact channels. Community members sign in with Google, submit an application, wait for committee approval and reach member resources only after approval.
 
@@ -51,6 +51,7 @@ IAYA UK is independent, voluntary and non-profit, and is not run by any politica
 - Keep the provided logo unchanged.
 - Motto: “With knowledge and work, we build the future” / «بالعلم والعمل نبني المستقبل».
 - Keep committee names and portraits exactly as provided.
+- Voice: formal and elegant in both English and Arabic (owner's direction, 16 October 2026).
 
 ## Evidence on Hand
 

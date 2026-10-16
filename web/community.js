@@ -475,10 +475,10 @@
     var layout = el('div', 'community-layout');
     root.appendChild(layout);
     var titles = {
-      community: [t('Our community', 'مجتمعنا'), t('A place to connect and contribute', 'مساحة للتواصل والمساهمة'), t('A shared space for the IAYA association community, with secure sign-in and approved membership.', 'مساحة مشتركة لمجتمع جمعية إيايا، مع تسجيل دخول آمن وعضوية معتمدة.')],
-      join: [t('Become a member', 'انضم إلينا'), t('Your next connection starts here', 'تواصلك القادم يبدأ هنا'), t('Sign in, complete your application, and become part of the association community after approval.', 'سجّل الدخول وأكمل طلبك لتصبح جزءاً من مجتمع الجمعية بعد الموافقة.')],
-      signin: [t('Member sign-in', 'دخول الأعضاء'), t('Welcome to IAYA', 'مرحباً بك في إيايا'), t('Sign in securely to view your application or enter the approved members area.', 'سجّل الدخول بأمان لمتابعة طلبك أو دخول مساحة الأعضاء المعتمدين.')],
-      admin: [t('Association administration', 'إدارة الجمعية'), t('Membership review', 'مراجعة العضوية'), t('Review applications and manage access to the community.', 'راجع طلبات العضوية وأدِر الوصول إلى المجتمع.')]
+      community: [t('Membership', 'العضوية'), t('Membership', 'العضوية'), t('The members’ area of the Iraqi Academic Youth Association UK, with secure sign-in and committee-approved membership.', 'مساحة أعضاء الجمعية العراقية الأكاديمية للشباب في المملكة المتحدة، بتسجيل دخول آمن وعضوية تعتمدها اللجنة.')],
+      join: [t('Membership', 'العضوية'), t('Membership application', 'طلب العضوية'), t('Sign in with Google and complete your application. Membership is confirmed once the committee has approved it.', 'سجّل الدخول بحساب Google وأكمل طلبك، وتُعتمد العضوية بعد موافقة اللجنة.')],
+      signin: [t('Membership', 'العضوية'), t('Member sign-in', 'دخول الأعضاء'), t('Sign in securely to follow your application or to enter the members’ area.', 'سجّل الدخول بأمان لمتابعة طلبك أو للدخول إلى مساحة الأعضاء.')],
+      admin: [t('Committee', 'اللجنة'), t('Membership review', 'مراجعة طلبات العضوية'), t('Review applications and manage access to the members’ area.', 'مراجعة طلبات العضوية وإدارة صلاحيات الوصول إلى مساحة الأعضاء.')]
     };
     var pageTitle = heading(layout, titles[route][0], titles[route][1], titles[route][2]);
     if (recoverFocus) pageTitle.focus({ preventScroll: true });
