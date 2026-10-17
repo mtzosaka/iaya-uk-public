@@ -85,3 +85,11 @@ html[lang=ar] h1,html[lang=ar] h2{font-family:"Reem Kufi",Cairo,sans-serif;font-
 @media(max-width:479px){.brand small{display:none}}
 @media(max-width:380px){.shell{padding-inline:16px}.brand strong{font-size:12px}.brand img{width:32px;height:32px}.header-actions{gap:4px}.small-control{font-size:11px;padding-inline:9px}.people-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.legacy{grid-template-columns:1fr}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.bridge .arc{animation:none;stroke-dashoffset:0}*,*:before,*:after{transition:none!important}}
+
+/* Appearance control: dedicated footer utility row */
+.footer-base{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-top:28px;padding-top:18px;border-top:1px solid var(--line);color:var(--muted);font-size:14px}
+.footer-base .small-control{display:inline-flex;align-items:center;gap:8px;font-size:14px;min-height:44px;padding-inline:16px;border-radius:99px}
+.footer-base .ico{width:18px;height:18px;flex:none}
+.footer-base .ico-sun{display:none}
+:root[data-theme=dark] .footer-base .ico-moon{display:none}
+:root[data-theme=dark] .footer-base .ico-sun{display:inline}
