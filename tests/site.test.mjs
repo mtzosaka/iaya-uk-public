@@ -3,7 +3,8 @@ import assert from 'node:assert/strict';
 import fs from 'node:fs/promises';
 import vm from 'node:vm';
 const html=await fs.readFile(new URL('../index.html',import.meta.url),'utf8');
-const css=await fs.readFile(new URL('../web/styles.css',import.meta.url),'utf8');
+import {concatStyles} from '../scripts/lib/assemble.mjs';
+const css=await concatStyles();
 test('complete public pages, supplied identity and accessible controls survive the rebuild',()=>{
  const ids=[...html.matchAll(/\bid="([^"]+)"/g)].map(m=>m[1]);assert.equal(ids.length,new Set(ids).size);
  for(const page of ['home','about','activities','events','resources','contact','privacy','community','not-found'])assert(html.includes('data-page="'+page+'"'));

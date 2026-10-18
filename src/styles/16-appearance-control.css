@@ -1,0 +1,7 @@
+/* Appearance control: dedicated footer utility row */
+.footer-base{display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-top:28px;padding-top:18px;border-top:1px solid var(--line);color:var(--muted);font-size:14px}
+.footer-base .small-control{display:inline-flex;align-items:center;gap:8px;font-size:14px;min-height:44px;padding-inline:16px;border-radius:99px}
+.footer-base .ico{width:18px;height:18px;flex:none}
+.footer-base .ico-sun{display:none}
+:root[data-theme=dark] .footer-base .ico-moon{display:none}
+:root[data-theme=dark] .footer-base .ico-sun{display:inline}

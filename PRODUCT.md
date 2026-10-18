@@ -55,7 +55,7 @@ IAYA UK is independent, voluntary and non-profit, and is not run by any politica
 
 ## Evidence on Hand
 
-In the repo (`web/content.json`): the logo, the keynote photograph, committee portraits (two members have no photo), the June 2026 academic evening agenda (keynote: Sir Bashir Al-Hashimi), and verified news.
+In the repo (`src/content/content.json`): the logo, the keynote photograph, committee portraits (two members have no photo), the June 2026 academic evening agenda (keynote: Sir Bashir Al-Hashimi), and verified news.
 
 The owner holds these but has not yet supplied them: further event photographs, partner logos cleared for display, and member testimonials with permission to publish. Use them only once they are added to the repo. Until then, don't add placeholders or stand-ins for them.
 
