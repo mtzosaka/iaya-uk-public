@@ -6,9 +6,11 @@ The previous site is permanently recoverable on GitHub branch `backup/pre-rebuil
 
 ## Source and build
 
-- `web/page.html`, `web/styles.css`, `web/public.js`: public pages and theme/language/navigation.
-- `web/community.js`: Google sign-in, applications, membership states and committee review UI.
-- `web/content.json`: supplied logo, photographs, names and association content.
+- `src/pages/layout.html` plus `src/partials/*.html`: the page shell, header, footer and one partial per page (home, about, activities, events, resources, contact, privacy, community, not-found).
+- `src/styles/NN-name.css`: the stylesheet, one file per section, joined in filename order (tokens, base, header, hero, committee, responsive, and so on).
+- `src/scripts/public.js`: theme, language and navigation. `src/scripts/community.js`: Google sign-in, applications, membership states and committee review UI.
+- `src/content/content.json`: supplied logo, photographs, names (including the committee list) and association content.
+- `scripts/build.mjs` runs the build. `scripts/lib/` holds the page assembler, HTML helpers and Worker wrapper; `scripts/data/` holds the programme and resource lists.
 - `server/community.mjs`: Worker API with Google token verification, secure server sessions and D1-backed approval.
 - `migrations/schema.sql`: D1 schema; immutable initial deployment migration also in `drizzle/`.
 - `index.html`: generated self-contained public preview; opening the file locally cannot authenticate members.
@@ -21,7 +23,7 @@ npm run build
 npm test
 ```
 
-Run a build after changing `web/` or `server/`. Never edit generated Worker output directly.
+Run a build after changing `src/`, `scripts/` or `server/`. Never edit generated Worker output directly.
 
 ## Hosting and Google configuration
 

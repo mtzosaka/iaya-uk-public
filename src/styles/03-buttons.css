@@ -1,0 +1,4 @@
+/* Buttons and links */
+.btn{display:inline-flex;align-items:center;justify-content:center;text-align:center;text-decoration:none;min-height:50px;border-radius:99px;padding:11px 26px;font-size:15px;font-weight:600;border:1px solid var(--gold);background:transparent;color:var(--gold);cursor:pointer;transition:transform 160ms var(--ease),background 160ms ease,color 160ms ease,opacity 160ms ease}.btn-primary{background:var(--primary);color:var(--on-primary);border-color:var(--primary)}.btn:active,.small-control:active{transform:scale(.97)}.btn:disabled,button:disabled{opacity:.6;cursor:not-allowed}.header-actions .btn{min-height:44px;padding:8px 18px;font-size:14px}
+.text-link{font-size:15px;font-weight:600;color:var(--gold);text-decoration:underline;text-decoration-thickness:1px}.action-row{display:flex;flex-wrap:wrap;align-items:center;gap:14px 18px;margin-top:30px}
+

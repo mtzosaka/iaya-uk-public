@@ -1,0 +1,3 @@
+/* Interaction */
+@media(hover:hover) and (pointer:fine){.btn:hover{background:var(--bg2)}.btn-primary:hover{background:var(--primary);opacity:.9}.small-control:hover{background:var(--gold);color:var(--on-primary)}.main-nav a:hover,.text-link:hover,.footer-links a:hover{color:var(--gold)}.social-links a:hover{background:var(--gold);color:var(--on-primary)}.zone:hover svg{transform:translateX(6px)}html[dir=rtl] .zone:hover svg{transform:scaleX(-1) translateX(6px)}.person:hover img,.person:hover .initials{border-color:var(--teal)}}
+

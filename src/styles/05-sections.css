@@ -1,0 +1,4 @@
+/* Sections */
+.section{padding:96px 0}.section-rule{border-top:1px solid var(--line)}.section-heading{display:grid;grid-template-columns:1fr 1.2fr;gap:80px;align-items:end;margin-bottom:48px}.section-heading p{color:var(--muted);font-size:18px;margin:0}.section-heading .text-link{display:inline-block;margin-top:12px}.section-title{margin-bottom:36px}
+.about-grid{display:grid;grid-template-columns:1.15fr 1fr;gap:80px;align-items:center}.body-copy h2{margin-bottom:24px}.body-copy p{color:var(--muted);font-size:17px}
+

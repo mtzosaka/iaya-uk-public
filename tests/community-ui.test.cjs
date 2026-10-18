@@ -1,5 +1,5 @@
 const fs=require('node:fs'),vm=require('node:vm'),assert=require('node:assert/strict'),path=require('node:path');
-const source=fs.readFileSync(path.resolve(__dirname,'../web/community.js'),'utf8');
+const source=fs.readFileSync(path.resolve(__dirname,'../src/scripts/community.js'),'utf8');
 class Node {
  constructor(tag){this.tagName=tag;this.children=[];this.attrs={};this.listeners={};this.className='';this._text='';this.value='';this.disabled=false;this.hidden=false;this.classList={add:c=>this.className+=' '+c};}
  get textContent(){return this._text+this.children.map(n=>n.textContent).join(' ')}

@@ -1,0 +1,4 @@
+/* Committee portraits in arch frames */
+.people-grid{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:30px 22px;padding-bottom:28px}.person{margin:0;transition:transform 220ms var(--ease)}.person img,.person .initials{width:100%;aspect-ratio:4/5;object-fit:cover;object-position:center 20%;background:var(--bg2);border-radius:999px 999px 12px 12px;border:2px solid var(--gold);transition:border-color 160ms ease}.person .initials{display:grid;place-items:center;font:600 40px Fraunces,serif;color:var(--gold)}.person figcaption{font-size:14px;font-weight:600;margin-top:12px;line-height:1.45;text-align:center}
+@media(min-width:1024px){.people-grid .person:nth-child(even){transform:translateY(28px)}}
+
