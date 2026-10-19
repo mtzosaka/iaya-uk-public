@@ -6,8 +6,10 @@ export const root=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'../
 export const read=p=>fs.readFile(path.join(root,p),'utf8');
 export async function assemblePage(){
  let page=await read('src/pages/layout.html');
- for(const tag of new Set(page.match(/<!--@include [\w./-]+-->/g)||[])){
-  page=page.split(tag).join(await read('src/'+tag.slice(13,-3)));
+ for(let depth=0;depth<4;depth++){
+  const tags=new Set(page.match(/<!--@include [\w./-]+-->/g)||[]);
+  if(!tags.size)break;
+  for(const tag of tags)page=page.split(tag).join(await read('src/'+tag.slice(13,-3)));
  }
  return page;
 }
