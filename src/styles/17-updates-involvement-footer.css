@@ -1,14 +1,14 @@
 /* Updates, at-a-glance, get involved and organised footer (inspired by the clear audience-first structure of chevening.org) */
-.glance{border-block:1px solid var(--line);background:var(--surface);padding-block:12px}
+.glance{padding-block:20px}
 .glance-list{display:grid;grid-template-columns:repeat(3,1fr);gap:0;list-style:none;margin:0;padding:0}
-.glance-list li{padding:32px 28px;display:grid;gap:6px;border-inline-end:1px solid var(--line)}
+.glance-list li{padding:32px 28px;display:grid;gap:6px}
 .glance-list li:last-child{border-inline-end:0}
-.glance-list strong{font:600 clamp(38px,5vw,56px)/1 Fraunces,Georgia,serif;color:var(--accent)}
+.glance-list strong{font:900 clamp(48px,7vw,96px)/.9 Chivo,sans-serif;letter-spacing:-.04em;color:#eec76b}
 .glance-list span{color:var(--muted);font-size:16px}
 .update-grid,.involve-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:32px}
-.update-card,.involve-card{display:flex;flex-direction:column;gap:10px;padding:28px;border:1px solid var(--line);border-top:4px solid var(--accent);border-radius:12px;background:var(--surface);color:var(--ink);text-decoration:none;transition:transform .2s ease,box-shadow .2s ease}
-.involve-card{border-top-color:var(--teal)}
-.update-card:hover,.involve-card:hover{transform:translateY(-3px);box-shadow:0 10px 28px rgba(8,19,41,.14)}
+.update-card,.involve-card{display:flex;flex-direction:column;gap:10px;padding:32px;border:0;border-radius:0;background:var(--card);color:var(--card-ink);--ink:var(--card-ink);--muted:var(--card-muted);text-decoration:none;transition:transform .25s var(--ease),background .25s var(--ease)}
+.involve-card{border-top-color:var(--accent)}
+.update-card:hover,.involve-card:hover{transform:translateY(-6px)}
 .update-label{font-size:14px;font-weight:600;color:var(--accent)}
 .update-card h3,.involve-card h3{margin:0;font-size:22px;line-height:1.25}
 .update-card p,.involve-card p{margin:0;color:var(--muted);font-size:16px}
@@ -19,9 +19,9 @@ html[dir=rtl] .update-card:after,html[dir=rtl] .involve-card:after,body[dir=rtl]
 .footer-brand p{margin:0;color:var(--muted);font-size:15px;max-width:34ch}
 .footer-brand .social-links{margin-top:6px}
 .footer-col{display:flex;flex-direction:column}
-.footer-title{margin:0 0 8px;font-size:15px;font-weight:600;color:var(--accent)}
+.footer-title{margin:0 0 8px;font-size:16px;font-weight:700;color:var(--accent);text-transform:none;letter-spacing:0}
 .footer-col a{padding:8px 0;color:var(--ink);text-decoration:none;font-size:16px}
 .footer-col a:hover{color:var(--accent);text-decoration:underline}
-@media(max-width:900px){.update-grid,.involve-grid{grid-template-columns:1fr}.footer-grid{grid-template-columns:1fr 1fr}.footer-brand{grid-column:1/-1}.glance-list{grid-template-columns:1fr}.glance-list li{border-inline-end:0;border-bottom:1px solid var(--line)}.glance-list li:last-child{border-bottom:0}}
+@media(max-width:900px){.update-grid,.involve-grid{grid-template-columns:1fr}.footer-grid{grid-template-columns:1fr 1fr}.footer-brand{grid-column:1/-1}.glance-list{grid-template-columns:1fr}}
 @media(max-width:520px){.footer-grid{grid-template-columns:1fr}}
 @media(prefers-reduced-motion:reduce){.update-card,.involve-card{transition:none}.update-card:hover,.involve-card:hover{transform:none}}

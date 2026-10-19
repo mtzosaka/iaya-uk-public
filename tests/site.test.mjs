@@ -16,7 +16,7 @@ test('complete public pages, supplied identity and accessible controls survive t
 });
 test('core palette provides readable text and primary buttons in both themes',()=>{
  const lum=h=>h.match(/\w\w/g).map(x=>parseInt(x,16)/255).map(x=>x<=.04045?x/12.92:((x+.055)/1.055)**2.4).reduce((r,x,i)=>r+x*[.2126,.7152,.0722][i],0);
- for(const [a,b]of [['0d1a38','f7f2e4'],['4a546b','f7f2e4'],['4a546b','ece3c9'],['7a5600','f7f2e4'],['7a5600','ece3c9'],['f7f2e4','7a5600'],['f4efe2','081329'],['aeb8cf','081329'],['aeb8cf','0f2350'],['eec76b','081329'],['081329','eec76b'],['ffffff','16409a'],['eec76b','16409a']]){const x=lum(a),y=lum(b);assert((Math.max(x,y)+.05)/(Math.min(x,y)+.05)>=4.5,a+'/'+b)}
+ for(const [a,b]of [['0d1a38','faf9f6'],['0d1a38','e4eaf4'],['f4efe2','0f2350'],['4a546b','faf9f6'],['4a546b','f0eeea'],['0d1a38','f0eeea'],['7a5600','faf9f6'],['faf9f6','7a5600'],['ffffff','16409a'],['eec76b','16409a'],['081329','eec76b'],['f4efe2','0d1a38'],['eec76b','0d1a38'],['f4efe2','081329'],['aeb8cf','081329'],['aeb8cf','0f2350'],['f4efe2','0f2350']]){const x=lum(a),y=lum(b);assert((Math.max(x,y)+.05)/(Math.min(x,y)+.05)>=4.5,a+'/'+b)}
  assert(css.includes('prefers-reduced-motion'));assert(css.includes('max-width:767px'));assert(css.includes('inset-inline-start'));
 });
 test('built Worker serves public pages, keeps config fail-closed and has security headers',async()=>{
