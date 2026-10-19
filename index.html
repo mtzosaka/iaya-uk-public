@@ -34,10 +34,25 @@ html[lang=ar] h1,html[lang=ar] h2{font-family:"Reem Kufi",Cairo,sans-serif;font-
 .hero{padding:76px 0 56px;background:radial-gradient(900px 460px at 85% -10%,var(--bg2),transparent 70%)}.hero h1{font-size:clamp(44px,7vw,92px);line-height:1.04;max-width:15ch}html[lang=ar] .hero h1{font-size:clamp(40px,6.4vw,84px);line-height:1.35;color:var(--gold);max-width:18ch}
 .hero .alt{font:500 clamp(20px,2.6vw,30px)/1.6 "Reem Kufi",Cairo,sans-serif;color:var(--gold);margin:16px 0 0;max-width:none}html[lang=ar] .hero .alt{font:500 clamp(19px,2.2vw,26px)/1.4 Fraunces,serif;color:var(--muted)}
 .motto{font:italic 400 clamp(19px,2vw,23px)/1.5 Fraunces,serif;color:var(--muted);margin:26px 0 0}html[lang=ar] .motto{font:600 21px/1.8 Cairo,sans-serif}.hero .intro{color:var(--muted);max-width:56ch;margin-top:18px}
-.bridge-figure{margin:44px 0 0}.bridge{width:100%;height:auto;display:block;overflow:visible}.bridge .arc{fill:none;stroke:var(--gold);stroke-width:3;stroke-linecap:round;stroke-dasharray:1200;stroke-dashoffset:1200;animation:bridge-draw 2.4s .25s var(--ease) forwards}.bridge .pillars line{stroke:var(--gold);stroke-opacity:.45;stroke-width:1.5}.bridge .deck{stroke:var(--teal);stroke-width:3}.bridge .node{fill:var(--teal)}
-.bridge-places{position:relative;height:30px;margin-top:6px;font-size:15px;font-weight:600}.bridge-places>span{position:absolute;top:0;transform:translateX(-50%);white-space:nowrap}.place-west{left:8%}.place-east{left:92%}
-.bridge-caption{text-align:center;font:italic 400 clamp(20px,2.4vw,28px)/1.4 Fraunces,serif;color:var(--gold);margin-top:6px}html[lang=ar] .bridge-caption{font:600 clamp(20px,2.4vw,26px)/1.6 "Reem Kufi",Cairo,sans-serif}
-@keyframes bridge-draw{to{stroke-dashoffset:0}}
+.bridge-figure{margin:44px 0 0;position:relative;isolation:isolate}.bridge-figure::before{content:"";position:absolute;inset:-24px -12px 0;z-index:-1;background:var(--pattern);-webkit-mask-image:radial-gradient(ellipse 60% 70% at 50% 55%,#000,transparent 75%);mask-image:radial-gradient(ellipse 60% 70% at 50% 55%,#000,transparent 75%);opacity:.9}
+.bridge{width:100%;height:auto;display:block;overflow:visible}.bridge .ground{stroke:var(--gold);stroke-opacity:.25;stroke-width:1}
+.bridge .piers line{stroke:var(--gold);stroke-opacity:.5;stroke-width:2;opacity:0;animation:bridge-fade .8s .2s var(--ease) forwards}
+.bridge .arch{fill:var(--gold);fill-opacity:.05;stroke:var(--gold);stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:1;stroke-dashoffset:1;animation:bridge-draw 1.2s var(--ease) forwards;transition:fill-opacity .3s var(--ease),stroke-width .3s var(--ease)}
+.bridge .a1{animation-delay:.5s}.bridge .a2{animation-delay:1s}.bridge .a3{animation-delay:1.5s}.bridge .a4{animation-delay:2s}
+.bridge .keystones circle{fill:var(--teal);opacity:0;animation:bridge-fade .5s 2.9s var(--ease) forwards}
+.bridge .deck{stroke:var(--teal);stroke-width:3.5;stroke-linecap:round;stroke-dasharray:1;stroke-dashoffset:1;animation:bridge-draw 1.4s .1s var(--ease) forwards}
+.bridge .rail{stroke:var(--teal);stroke-opacity:.55;stroke-width:3;stroke-dasharray:1 11;stroke-linecap:round;opacity:0;animation:bridge-fade .8s 1.2s var(--ease) forwards}
+.bridge .node{fill:var(--teal)}.bridge .node-ring{fill:none;stroke:var(--teal);stroke-width:1.5;transform-box:fill-box;transform-origin:center;animation:bridge-pulse 3.2s 3s ease-out infinite}.bridge .node-ring.r2{animation-delay:4.6s}
+.bridge .spark{fill:var(--lapis-gold);opacity:0;animation:bridge-travel 7s 3.2s cubic-bezier(.45,0,.2,1) infinite alternate}.bridge .spark.s2{fill:var(--gold);animation-delay:3.7s;animation-duration:7s}
+.bridge-places{position:relative;height:28px;font-size:15px;font-weight:600}.bridge-places>span{position:absolute;bottom:0;transform:translateX(-50%);white-space:nowrap}.place-west{left:8%}.place-east{left:92%}
+.bridge-pillars{list-style:none;margin:10px 0 0 8.4%;padding:0;width:84%;display:grid;grid-template-columns:repeat(4,1fr);gap:0;font-size:14px;font-weight:600;color:var(--muted);text-align:center}.bridge-pillars li{padding:6px 10px;transition:color .25s ease}
+@media(hover:hover) and (pointer:fine){.bridge-pillars li:hover{color:var(--ink)}.bridge-figure:has(.p1:hover) .a1,.bridge-figure:has(.p2:hover) .a2,.bridge-figure:has(.p3:hover) .a3,.bridge-figure:has(.p4:hover) .a4{fill-opacity:.2;stroke-width:4}}
+@media(max-width:767px){.bridge-places{font-size:13px}.bridge-pillars{margin-inline:6%;width:88%;font-size:11.5px;line-height:1.35}.bridge-pillars li{padding:6px 2px}}
+@keyframes bridge-draw{to{stroke-dashoffset:0}}@keyframes bridge-fade{to{opacity:1}}
+@keyframes bridge-pulse{0%{transform:scale(1);opacity:.7}100%{transform:scale(2.6);opacity:0}}
+@keyframes bridge-travel{0%{opacity:0;transform:translateX(0)}8%{opacity:1}92%{opacity:1}100%{opacity:0;transform:translateX(840px)}}
+@media(prefers-reduced-motion:reduce){.bridge .arch,.bridge .deck{animation:none;stroke-dashoffset:0}.bridge .piers line,.bridge .keystones circle,.bridge .rail{animation:none;opacity:1}.bridge .node-ring,.bridge .spark{display:none}}.bridge-caption{text-align:center;font:italic 400 clamp(20px,2.4vw,28px)/1.4 Fraunces,serif;color:var(--gold);margin-top:6px}html[lang=ar] .bridge-caption{font:600 clamp(20px,2.4vw,26px)/1.6 "Reem Kufi",Cairo,sans-serif}
+
 .hero-foot{display:grid;grid-template-columns:1fr 1.4fr 1fr;gap:32px;margin-top:52px;border-top:1px solid var(--line);padding-top:24px;font-size:14px;color:var(--muted)}.hero-foot strong{font-size:16px;color:var(--ink);display:block;font-weight:600}
 
 /* Sections */
@@ -161,13 +176,27 @@ html[dir=rtl] .update-card:after,html[dir=rtl] .involve-card:after,body[dir=rtl]
   <p class="intro"><span class="en">An independent, voluntary association of Iraqi students, researchers and young academics in the United Kingdom, dedicated to knowledge, leadership and academic service.</span><span class="ar">جمعية مستقلة تطوعية تضمّ الطلبة والباحثين والأكاديميين العراقيين الشباب في المملكة المتحدة، وتُعنى بالمعرفة والقيادة والخدمة الأكاديمية.</span></p>
   <div class="action-row"><a class="btn btn-primary" href="#/join"><span class="en">Apply for membership</span><span class="ar">التقدّم بطلب العضوية</span></a><a class="btn btn-secondary" href="#/about"><span class="en">About the Association</span><span class="ar">تعرّف على الجمعية</span></a></div>
   <figure class="bridge-figure">
-   <svg class="bridge" viewBox="0 0 1000 200" role="img" aria-label="A bridge between London and Baghdad" data-label-en="A bridge between London and Baghdad" data-label-ar="جسر بين لندن وبغداد">
-    <g class="pillars"><line x1="200" y1="115" x2="200" y2="180"/><line x1="320" y1="63" x2="320" y2="180"/><line x1="440" y1="38" x2="440" y2="180"/><line x1="560" y1="38" x2="560" y2="180"/><line x1="680" y1="63" x2="680" y2="180"/><line x1="800" y1="115" x2="800" y2="180"/></g>
-    <path class="arc" d="M80 180 C 260 -30, 740 -30, 920 180"/>
-    <line class="deck" x1="60" y1="180" x2="940" y2="180"/>
-    <circle class="node" cx="80" cy="180" r="9"/><circle class="node" cx="920" cy="180" r="9"/>
-   </svg>
    <div class="bridge-places" aria-hidden="true"><span class="place-west"><span class="en">London</span><span class="ar">لندن</span></span><span class="place-east"><span class="en">Baghdad</span><span class="ar">بغداد</span></span></div>
+   <svg class="bridge" viewBox="0 0 1000 210" role="img" aria-label="A bridge of four arches between London and Baghdad" data-label-en="A bridge of four arches between London and Baghdad" data-label-ar="جسر من أربعة أقواس بين لندن وبغداد">
+    <line class="ground" x1="60" y1="200" x2="940" y2="200"/>
+    <g class="piers"><line x1="80" y1="70" x2="80" y2="200"/><line x1="290" y1="70" x2="290" y2="200"/><line x1="500" y1="70" x2="500" y2="200"/><line x1="710" y1="70" x2="710" y2="200"/><line x1="920" y1="70" x2="920" y2="200"/></g>
+    <path class="arch a1" pathLength="1" d="M87 200V150Q87 108 185 92Q283 108 283 150V200"/>
+    <path class="arch a2" pathLength="1" d="M297 200V150Q297 108 395 92Q493 108 493 150V200"/>
+    <path class="arch a3" pathLength="1" d="M507 200V150Q507 108 605 92Q703 108 703 150V200"/>
+    <path class="arch a4" pathLength="1" d="M717 200V150Q717 108 815 92Q913 108 913 150V200"/>
+    <g class="keystones"><circle cx="185" cy="92" r="3.5"/><circle cx="395" cy="92" r="3.5"/><circle cx="605" cy="92" r="3.5"/><circle cx="815" cy="92" r="3.5"/></g>
+    <line class="rail" x1="80" y1="56" x2="920" y2="56"/>
+    <line class="deck" pathLength="1" x1="60" y1="70" x2="940" y2="70"/>
+    <circle class="node-ring" cx="80" cy="70" r="9"/><circle class="node-ring r2" cx="920" cy="70" r="9"/>
+    <circle class="node" cx="80" cy="70" r="9"/><circle class="node" cx="920" cy="70" r="9"/>
+    <circle class="spark s2" cx="80" cy="70" r="4"/><circle class="spark" cx="80" cy="70" r="5"/>
+   </svg>
+   <ol class="bridge-pillars">
+    <li class="p1"><span class="en">Academic exchange</span><span class="ar">التبادل الأكاديمي</span></li>
+    <li class="p2"><span class="en">Youth development</span><span class="ar">تمكين الشباب</span></li>
+    <li class="p3"><span class="en">Networks and opportunity</span><span class="ar">الشبكات والفرص</span></li>
+    <li class="p4"><span class="en">A bridge with Iraq</span><span class="ar">جسر مع العراق</span></li>
+   </ol>
    <figcaption class="bridge-caption"><span class="en">Knowledge brings us together</span><span class="ar">المعرفة تجمعنا</span></figcaption>
   </figure>
   <div class="hero-foot"><div><strong><span class="en">Established in 2019</span><span class="ar">تأسست عام 2019</span></strong><span class="en">Founded by young Iraqi academics</span><span class="ar">بمبادرة من أكاديميين عراقيين شباب</span></div><div><strong><span class="en">Independent, voluntary and non-profit</span><span class="ar">مستقلة، تطوعية، غير ربحية</span></strong><span class="en">In service of the academic community</span><span class="ar">في خدمة المجتمع الأكاديمي</span></div><div><strong><span class="en">The United Kingdom and Iraq</span><span class="ar">المملكة المتحدة والعراق</span></strong><span class="en">Connected through knowledge</span><span class="ar">تجمعهما المعرفة</span></div></div>

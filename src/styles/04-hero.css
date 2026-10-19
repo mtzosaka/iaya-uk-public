@@ -2,9 +2,24 @@
 .hero{padding:76px 0 56px;background:radial-gradient(900px 460px at 85% -10%,var(--bg2),transparent 70%)}.hero h1{font-size:clamp(44px,7vw,92px);line-height:1.04;max-width:15ch}html[lang=ar] .hero h1{font-size:clamp(40px,6.4vw,84px);line-height:1.35;color:var(--gold);max-width:18ch}
 .hero .alt{font:500 clamp(20px,2.6vw,30px)/1.6 "Reem Kufi",Cairo,sans-serif;color:var(--gold);margin:16px 0 0;max-width:none}html[lang=ar] .hero .alt{font:500 clamp(19px,2.2vw,26px)/1.4 Fraunces,serif;color:var(--muted)}
 .motto{font:italic 400 clamp(19px,2vw,23px)/1.5 Fraunces,serif;color:var(--muted);margin:26px 0 0}html[lang=ar] .motto{font:600 21px/1.8 Cairo,sans-serif}.hero .intro{color:var(--muted);max-width:56ch;margin-top:18px}
-.bridge-figure{margin:44px 0 0}.bridge{width:100%;height:auto;display:block;overflow:visible}.bridge .arc{fill:none;stroke:var(--gold);stroke-width:3;stroke-linecap:round;stroke-dasharray:1200;stroke-dashoffset:1200;animation:bridge-draw 2.4s .25s var(--ease) forwards}.bridge .pillars line{stroke:var(--gold);stroke-opacity:.45;stroke-width:1.5}.bridge .deck{stroke:var(--teal);stroke-width:3}.bridge .node{fill:var(--teal)}
-.bridge-places{position:relative;height:30px;margin-top:6px;font-size:15px;font-weight:600}.bridge-places>span{position:absolute;top:0;transform:translateX(-50%);white-space:nowrap}.place-west{left:8%}.place-east{left:92%}
-.bridge-caption{text-align:center;font:italic 400 clamp(20px,2.4vw,28px)/1.4 Fraunces,serif;color:var(--gold);margin-top:6px}html[lang=ar] .bridge-caption{font:600 clamp(20px,2.4vw,26px)/1.6 "Reem Kufi",Cairo,sans-serif}
-@keyframes bridge-draw{to{stroke-dashoffset:0}}
+.bridge-figure{margin:44px 0 0;position:relative;isolation:isolate}.bridge-figure::before{content:"";position:absolute;inset:-24px -12px 0;z-index:-1;background:var(--pattern);-webkit-mask-image:radial-gradient(ellipse 60% 70% at 50% 55%,#000,transparent 75%);mask-image:radial-gradient(ellipse 60% 70% at 50% 55%,#000,transparent 75%);opacity:.9}
+.bridge{width:100%;height:auto;display:block;overflow:visible}.bridge .ground{stroke:var(--gold);stroke-opacity:.25;stroke-width:1}
+.bridge .piers line{stroke:var(--gold);stroke-opacity:.5;stroke-width:2;opacity:0;animation:bridge-fade .8s .2s var(--ease) forwards}
+.bridge .arch{fill:var(--gold);fill-opacity:.05;stroke:var(--gold);stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:1;stroke-dashoffset:1;animation:bridge-draw 1.2s var(--ease) forwards;transition:fill-opacity .3s var(--ease),stroke-width .3s var(--ease)}
+.bridge .a1{animation-delay:.5s}.bridge .a2{animation-delay:1s}.bridge .a3{animation-delay:1.5s}.bridge .a4{animation-delay:2s}
+.bridge .keystones circle{fill:var(--teal);opacity:0;animation:bridge-fade .5s 2.9s var(--ease) forwards}
+.bridge .deck{stroke:var(--teal);stroke-width:3.5;stroke-linecap:round;stroke-dasharray:1;stroke-dashoffset:1;animation:bridge-draw 1.4s .1s var(--ease) forwards}
+.bridge .rail{stroke:var(--teal);stroke-opacity:.55;stroke-width:3;stroke-dasharray:1 11;stroke-linecap:round;opacity:0;animation:bridge-fade .8s 1.2s var(--ease) forwards}
+.bridge .node{fill:var(--teal)}.bridge .node-ring{fill:none;stroke:var(--teal);stroke-width:1.5;transform-box:fill-box;transform-origin:center;animation:bridge-pulse 3.2s 3s ease-out infinite}.bridge .node-ring.r2{animation-delay:4.6s}
+.bridge .spark{fill:var(--lapis-gold);opacity:0;animation:bridge-travel 7s 3.2s cubic-bezier(.45,0,.2,1) infinite alternate}.bridge .spark.s2{fill:var(--gold);animation-delay:3.7s;animation-duration:7s}
+.bridge-places{position:relative;height:28px;font-size:15px;font-weight:600}.bridge-places>span{position:absolute;bottom:0;transform:translateX(-50%);white-space:nowrap}.place-west{left:8%}.place-east{left:92%}
+.bridge-pillars{list-style:none;margin:10px 0 0 8.4%;padding:0;width:84%;display:grid;grid-template-columns:repeat(4,1fr);gap:0;font-size:14px;font-weight:600;color:var(--muted);text-align:center}.bridge-pillars li{padding:6px 10px;transition:color .25s ease}
+@media(hover:hover) and (pointer:fine){.bridge-pillars li:hover{color:var(--ink)}.bridge-figure:has(.p1:hover) .a1,.bridge-figure:has(.p2:hover) .a2,.bridge-figure:has(.p3:hover) .a3,.bridge-figure:has(.p4:hover) .a4{fill-opacity:.2;stroke-width:4}}
+@media(max-width:767px){.bridge-places{font-size:13px}.bridge-pillars{margin-inline:6%;width:88%;font-size:11.5px;line-height:1.35}.bridge-pillars li{padding:6px 2px}}
+@keyframes bridge-draw{to{stroke-dashoffset:0}}@keyframes bridge-fade{to{opacity:1}}
+@keyframes bridge-pulse{0%{transform:scale(1);opacity:.7}100%{transform:scale(2.6);opacity:0}}
+@keyframes bridge-travel{0%{opacity:0;transform:translateX(0)}8%{opacity:1}92%{opacity:1}100%{opacity:0;transform:translateX(840px)}}
+@media(prefers-reduced-motion:reduce){.bridge .arch,.bridge .deck{animation:none;stroke-dashoffset:0}.bridge .piers line,.bridge .keystones circle,.bridge .rail{animation:none;opacity:1}.bridge .node-ring,.bridge .spark{display:none}}.bridge-caption{text-align:center;font:italic 400 clamp(20px,2.4vw,28px)/1.4 Fraunces,serif;color:var(--gold);margin-top:6px}html[lang=ar] .bridge-caption{font:600 clamp(20px,2.4vw,26px)/1.6 "Reem Kufi",Cairo,sans-serif}
+
 .hero-foot{display:grid;grid-template-columns:1fr 1.4fr 1fr;gap:32px;margin-top:52px;border-top:1px solid var(--line);padding-top:24px;font-size:14px;color:var(--muted)}.hero-foot strong{font-size:16px;color:var(--ink);display:block;font-weight:600}
 
