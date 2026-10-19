@@ -24,8 +24,19 @@
   document.querySelectorAll('[data-page]').forEach(function(p){p.hidden=p.dataset.page!==(account?'community':currentRoute)});
   document.querySelectorAll('[data-nav]').forEach(function(a){if(a.dataset.nav===(account?'community':currentRoute))a.setAttribute('aria-current','page');else a.removeAttribute('aria-current')});
   closeMenu();updateTitle();
+  if(event&&event.type==='hashchange'&&!document.getElementById(hash.replace(/^\//,'')||'-')){window.scrollTo({top:0,behavior:'instant'});var bar=document.getElementById('route-bar');if(!bar){bar=document.createElement('div');bar.id='route-bar';bar.className='route-bar';bar.setAttribute('aria-hidden','true');document.body.appendChild(bar)}bar.classList.remove('go');void bar.offsetWidth;bar.classList.add('go')}
   if(window.IAYACommunity){if(account)window.IAYACommunity.render(currentRoute);else if(window.IAYACommunity.leave)window.IAYACommunity.leave()}
   requestAnimationFrame(function(){if(event&&event.type==='hashchange')document.getElementById('main').focus({preventScroll:true});if(currentRoute==='about'&&parts[1]==='team')document.getElementById('committee').scrollIntoView({block:'start'});else scrollTo({top:0,behavior:'instant'})});
  }
  window.addEventListener('hashchange',route);labels();route();
+ // Show a different random six of the committee on each visit; the first six stay as the no-script fallback.
+ (function(){var box=document.getElementById('committee-preview'),all=document.querySelectorAll('[data-page=about] .people-grid>*');if(!box||all.length<7)return;var pool=Array.prototype.slice.call(all);for(var i=pool.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1)),t=pool[i];pool[i]=pool[j];pool[j]=t}box.textContent='';pool.slice(0,box.dataset.count?+box.dataset.count:6).forEach(function(n){box.appendChild(n.cloneNode(true))})})();
+ // Scroll reveals: the hidden state exists only once this script has run, so content never stays hidden without JS.
+ if('IntersectionObserver' in window&&!(window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches)){
+  var io=new IntersectionObserver(function(entries){entries.forEach(function(en){if(en.isIntersecting){en.target.classList.add('in');io.unobserve(en.target)}})},{threshold:.15,rootMargin:'0px 0px -6% 0px'});
+  document.querySelectorAll('.chapter h2,.page-top h1').forEach(function(el){io.observe(el)});
+  document.querySelectorAll('.update-card,.involve-card,.arches li,.glance-list li,.legacy li,.people-grid>*').forEach(function(el,i){el.classList.add('rise');el.style.setProperty('--i',String(i%4));io.observe(el)});
+  setTimeout(function(){document.querySelectorAll('.motion .chapter h2:not(.in),.motion .page-top h1:not(.in),.motion .rise:not(.in)').forEach(function(el){var r=el.getBoundingClientRect();if(r.top<innerHeight&&r.bottom>0)el.classList.add('in')})},1500);
+  root.classList.add('motion');
+ }
 })();
