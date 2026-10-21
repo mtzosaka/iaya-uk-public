@@ -475,7 +475,7 @@
     var layout = el('div', 'community-layout');
     root.appendChild(layout);
     var titles = {
-      community: [t('Membership', 'العضوية'), t('Membership', 'العضوية'), t('The members’ area of the Iraqi Academic Youth Association UK, with secure sign-in and committee-approved membership.', 'مساحة أعضاء الجمعية العراقية الأكاديمية للشباب في المملكة المتحدة، بتسجيل دخول آمن وعضوية تعتمدها اللجنة.')],
+      community: [t('Membership', 'العضوية'), t('Membership', 'العضوية'), t('The members’ area of the Iraqi Academic Youth Association UK, with secure sign-in and committee-approved membership.', 'مساحة أعضاء جمعية الشباب الأكاديمي العراقي في المملكة المتحدة، بتسجيل دخول آمن وعضوية تعتمدها اللجنة.')],
       join: [t('Membership', 'العضوية'), t('Membership application', 'طلب العضوية'), t('Sign in with Google and complete your application. Membership is confirmed once the committee has approved it.', 'سجّل الدخول بحساب Google وأكمل طلبك، وتُعتمد العضوية بعد موافقة اللجنة.')],
       signin: [t('Membership', 'العضوية'), t('Member sign-in', 'دخول الأعضاء'), t('Sign in securely to follow your application or to enter the members’ area.', 'سجّل الدخول بأمان لمتابعة طلبك أو للدخول إلى مساحة الأعضاء.')],
       admin: [t('Committee', 'اللجنة'), t('Membership review', 'مراجعة طلبات العضوية'), t('Review applications and manage access to the members’ area.', 'مراجعة طلبات العضوية وإدارة صلاحيات الوصول إلى مساحة الأعضاء.')]
