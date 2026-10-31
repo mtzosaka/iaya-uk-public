@@ -3,7 +3,7 @@
 .about-grid{display:grid;grid-template-columns:1.15fr 1fr;gap:80px;align-items:center}.body-copy h2{margin-bottom:28px}.body-copy p{color:var(--muted);font-size:18px}
 .chapter{background:var(--chapter-bg) var(--pattern);color:var(--ink);--muted:color-mix(in srgb,var(--ink) 80%,transparent)}
 .ch1{--chapter-bg:var(--field-1);--ink:var(--field-1-ink)}.ch2{--chapter-bg:var(--field-2);--ink:var(--field-2-ink)}.ch3{--chapter-bg:var(--field-3);--ink:var(--field-3-ink)}.ch4{--chapter-bg:var(--field-4);--ink:var(--field-4-ink)}
-.ch4{--pattern:none}.ch4{--accent:#eec76b;--primary:#eec76b;--on-primary:#081329}
+.ch4{--pattern:none}.ch4{--accent:#8cc4f2;--primary:#8cc4f2;--on-primary:#08162f}
 .chapter ::selection{background:var(--ink);color:var(--chapter-bg)}
 .chapter .btn:not(.btn-primary):hover{background:var(--ink);color:var(--chapter-bg)}
 .motion .chapter h2,.motion .page-top h1{opacity:0;transform:translateY(28px);transition:opacity .8s var(--ease),transform .8s var(--ease)}.motion .chapter h2.in,.motion .page-top h1.in{opacity:1;transform:none}
